@@ -249,17 +249,39 @@
                                     <action selector="buttonPressed:" destination="eyB-yI-PKl" eventType="touchUpInside" id="hLh-x6-xxA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="winnerLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4t-Ax-PH5">
+                                <rect key="frame" x="6" y="278" width="362" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.99592334032058716" green="0.11957631260156631" blue="0.0077132899314165115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htx-CV-8qU">
+                                <rect key="frame" x="118" y="378" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="1" green="0.96334618330001831" blue="0.0072989319451153278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="eyB-yI-PKl" eventType="touchUpInside" id="NAy-Bs-UYg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="playAgainButtonOutlet" destination="htx-CV-8qU" id="v9d-EU-72D"/>
                         <outlet property="whosTurnLabel" destination="TXd-5T-oXQ" id="26R-JK-hyT"/>
+                        <outlet property="winnerLabel" destination="J4t-Ax-PH5" id="gKp-OP-ELw"/>
                         <segue destination="dOy-1Y-NAY" kind="show" identifier="goBid" id="9qG-5b-Tnz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qd9-V3-Tp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3380.625" y="147.88732394366198"/>
+            <point key="canvasLocation" x="3380" y="146.17691154422789"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lQg-jb-ufA">
@@ -286,6 +308,6 @@
         <image name="x" width="362" height="362"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fis-PQ-cee"/>
+        <segue reference="9qG-5b-Tnz"/>
     </inferredMetricsTieBreakers>
 </document>

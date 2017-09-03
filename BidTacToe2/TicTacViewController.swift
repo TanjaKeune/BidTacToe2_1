@@ -16,6 +16,10 @@ class TicTacViewController: UIViewController {
     
     @IBOutlet weak var whosTurnLabel: UILabel!
     
+    @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var playAgainButtonOutlet: UIButton!
+    
+    
     var gameState = Array(repeating: 0, count: 9)
     
     var winningCombitnation = [[2, 4, 6], [0,4,8], [0, 1, 2], [0,3,6], [1, 4, 7], [2, 5 , 8], [3, 4, 5], [6, 7, 8]]
@@ -37,10 +41,28 @@ class TicTacViewController: UIViewController {
         gameState = UserDefaults.standard.object(forKey: "gameState") as! Array
         updateBoard()
         complitedTurn = false
+        
+        hideWinningLabelAndButton()
+        
         print(gameState)
         
     }
 
+    func showWinningLabelAndButton() {
+        
+        UIView.animate(withDuration: 0.5) { 
+            self.winnerLabel.center = CGPoint(x: self.winnerLabel.center.x - 500, y: self.winnerLabel.center.y)
+            
+            self.playAgainButtonOutlet.center = CGPoint(x: self.playAgainButtonOutlet.center.x - 500, y: self.playAgainButtonOutlet.center.y)
+        }
+    }
+    func hideWinningLabelAndButton() {
+        
+        winnerLabel.center = CGPoint(x: winnerLabel.center.x + 500, y: winnerLabel.center.y)
+        
+        playAgainButtonOutlet.center = CGPoint(x: playAgainButtonOutlet.center.x + 500, y: playAgainButtonOutlet.center.y)
+        
+    }
     func updateBoard() {
         
         var button: UIButton = UIButton()
@@ -89,6 +111,8 @@ class TicTacViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
+                
+//        TODO: Integrate ad's
         
         if !complitedTurn {
             
@@ -127,40 +151,56 @@ class TicTacViewController: UIViewController {
                     
                     //                we have a winner
                     
-//                    setWinninImages(combination: combination,winner: gameState[combination[0]])
-                    winner = gameState[combination[0]]
-                    resetGameState()
+                    if winner < 0 {
+                        winner = gameState[combination[0]]
+                        
+                        if winner == 1 {
+                            
+                            winnerLabel.text = " X Won!"
+                        } else {
+                            
+                            winnerLabel.text = " O Won!"
+                        }
+                        resetGameState()
+                        
+                        //                call winner label
+                        
+                        showWinningLabelAndButton()
+                        break
+                    }
                     
-                    //                call winner label
+                }
+                
+            }
+            
+            var emptyPosition = false
+            
+            for position in gameState {
+                
+                if position == 0 {
+                    
+                    emptyPosition = true
                 }
             }
             
-            self.perform(#selector(callSegue), with: nil, afterDelay: 2.0)
+            if !emptyPosition && winner < 0 {
+                
+                winner = 0
+//                we have a tie
+                winnerLabel.text = "This game is a tie!"
+                resetGameState()
+                showWinningLabelAndButton()
+                
+            }
+            if winner < 0 && complitedTurn {
+                
+                self.perform(#selector(callSegue), with: nil, afterDelay: 2.0)
+
+            }
         }
         
     }
     
-//    func setWinninImages(combination: [Int], winner: Int) {
-//        
-//        
-//        var button: UIButton = UIButton()
-//        
-//        for i in combination {
-//            
-//            button = self.view.viewWithTag(i) as! UIButton!
-//            
-//            if gameState[i-1] == 1 {
-//                
-//                button.setImage((UIImage(named: "crosses.png")?.withRenderingMode(.alwaysOriginal)), for: [])
-//                
-//            } else if gameState[i-1] == 2 {
-//                
-//                button.setImage((UIImage(named: "noughts.png"))?.withRenderingMode(.alwaysOriginal), for: [])
-//                
-//            }
-//        }
-//    }
-//    
     func resetGameState() {
         
         let gameState = Array(repeating: 0, count: 9)
@@ -202,4 +242,10 @@ class TicTacViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func playAgainButton(_ sender: Any) {
+        
+        self.perform(#selector(callSegue), with: nil, afterDelay: 2.0)
+    }
+    
 }

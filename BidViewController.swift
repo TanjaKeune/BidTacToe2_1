@@ -70,7 +70,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                 var score = UserDefaults.standard.object(forKey: "playerXScore") as! Int
                 score += 1
                 UserDefaults.standard.set(score, forKey: "playerXScore")
-            } else {
+            } else if scoreUpdate == 2 {
 //                add score to o
                 
                 var score = UserDefaults.standard.object(forKey: "playerOScore") as! Int
