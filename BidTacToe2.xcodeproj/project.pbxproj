@@ -16,6 +16,8 @@
 		9B52DB381F59D9D7008EA4BC /* TicTacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */; };
 		9B52DB401F5C3E9B008EA4BC /* crosses.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB3F1F5C3E9B008EA4BC /* crosses.png */; };
 		9B52DB421F5C3EB2008EA4BC /* noughts.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB411F5C3EB2008EA4BC /* noughts.png */; };
+		9B52DB4A1F5C7687008EA4BC /* noughtsWon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB481F5C7687008EA4BC /* noughtsWon.png */; };
+		9B52DB4B1F5C7687008EA4BC /* crossesWon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB491F5C7687008EA4BC /* crossesWon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacViewController.swift; sourceTree = "<group>"; };
 		9B52DB3F1F5C3E9B008EA4BC /* crosses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosses.png; sourceTree = "<group>"; };
 		9B52DB411F5C3EB2008EA4BC /* noughts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noughts.png; path = Assets.xcassets/o.imageset/noughts.png; sourceTree = "<group>"; };
+		9B52DB481F5C7687008EA4BC /* noughtsWon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noughtsWon.png; sourceTree = "<group>"; };
+		9B52DB491F5C7687008EA4BC /* crossesWon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossesWon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				9B52DB3F1F5C3E9B008EA4BC /* crosses.png */,
+				9B52DB481F5C7687008EA4BC /* noughtsWon.png */,
+				9B52DB491F5C7687008EA4BC /* crossesWon.png */,
 				9B52DB411F5C3EB2008EA4BC /* noughts.png */,
 			);
 			name = Images;
@@ -144,9 +150,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B52DB4B1F5C7687008EA4BC /* crossesWon.png in Resources */,
 				9B52DB421F5C3EB2008EA4BC /* noughts.png in Resources */,
 				9B52DB401F5C3E9B008EA4BC /* crosses.png in Resources */,
 				9B52DB2C1F59D997008EA4BC /* LaunchScreen.storyboard in Resources */,
+				9B52DB4A1F5C7687008EA4BC /* noughtsWon.png in Resources */,
 				9B52DB291F59D997008EA4BC /* Assets.xcassets in Resources */,
 				9B52DB271F59D997008EA4BC /* Main.storyboard in Resources */,
 			);

@@ -157,9 +157,18 @@ class TicTacViewController: UIViewController {
                         if winner == 1 {
                             
                             winnerLabel.text = " X Won!"
+                            
+//                            change the winning combination images
+                            
+                            changeWinningImages(winningButtons: combination, winner: 1)
+                            
                         } else {
                             
                             winnerLabel.text = " O Won!"
+                            
+//                            change the winning combination images
+                            changeWinningImages(winningButtons: combination, winner: 2)
+
                         }
                         resetGameState()
                         
@@ -200,6 +209,35 @@ class TicTacViewController: UIViewController {
         }
         
     }
+    
+    
+    func changeWinningImages(winningButtons: [Int], winner: Int) {
+        
+        
+        var buttonWin: UIButton = UIButton()
+        print(winningButtons)
+        for i in winningButtons {
+            
+            let tag = i + 1
+            
+            buttonWin = view.viewWithTag(tag) as! UIButton!
+            
+            if gameState[i] == 1 {
+                
+//                buttonWin.tintColor = UIColor.red
+
+                buttonWin.setImage((UIImage(named: "crossesWon.png")?.withRenderingMode(.alwaysOriginal)), for: [])
+                
+            } else if gameState[i] == 2 {
+                
+//                buttonWin.tintColor = UIColor.red
+                
+                buttonWin.setImage((UIImage(named: "noughtsWon.png")?.withRenderingMode(.alwaysOriginal)), for: [])
+                
+            }
+        }
+    }
+    
     
     func resetGameState() {
         
