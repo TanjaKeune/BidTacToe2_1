@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		9B52DB221F59D996008EA4BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB211F59D996008EA4BC /* AppDelegate.swift */; };
-		9B52DB241F59D996008EA4BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB231F59D996008EA4BC /* ViewController.swift */; };
 		9B52DB271F59D997008EA4BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB251F59D997008EA4BC /* Main.storyboard */; };
 		9B52DB291F59D997008EA4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB281F59D997008EA4BC /* Assets.xcassets */; };
 		9B52DB2C1F59D997008EA4BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB2A1F59D997008EA4BC /* LaunchScreen.storyboard */; };
+		9B52DB341F59D9BF008EA4BC /* ChooseSymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB331F59D9BF008EA4BC /* ChooseSymbolViewController.swift */; };
+		9B52DB361F59D9C7008EA4BC /* BidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB351F59D9C7008EA4BC /* BidViewController.swift */; };
+		9B52DB381F59D9D7008EA4BC /* TicTacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */; };
+		9B52DB401F5C3E9B008EA4BC /* crosses.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB3F1F5C3E9B008EA4BC /* crosses.png */; };
+		9B52DB421F5C3EB2008EA4BC /* noughts.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB411F5C3EB2008EA4BC /* noughts.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B52DB1E1F59D996008EA4BC /* BidTacToe2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BidTacToe2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B52DB211F59D996008EA4BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B52DB231F59D996008EA4BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B52DB261F59D997008EA4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B52DB281F59D997008EA4BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B52DB2B1F59D997008EA4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B52DB2D1F59D997008EA4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B52DB331F59D9BF008EA4BC /* ChooseSymbolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseSymbolViewController.swift; sourceTree = "<group>"; };
+		9B52DB351F59D9C7008EA4BC /* BidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BidViewController.swift; path = ../BidViewController.swift; sourceTree = "<group>"; };
+		9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacViewController.swift; sourceTree = "<group>"; };
+		9B52DB3F1F5C3E9B008EA4BC /* crosses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crosses.png; sourceTree = "<group>"; };
+		9B52DB411F5C3EB2008EA4BC /* noughts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noughts.png; path = Assets.xcassets/o.imageset/noughts.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,25 @@
 			isa = PBXGroup;
 			children = (
 				9B52DB211F59D996008EA4BC /* AppDelegate.swift */,
-				9B52DB231F59D996008EA4BC /* ViewController.swift */,
+				9B52DB351F59D9C7008EA4BC /* BidViewController.swift */,
+				9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */,
+				9B52DB331F59D9BF008EA4BC /* ChooseSymbolViewController.swift */,
 				9B52DB251F59D997008EA4BC /* Main.storyboard */,
 				9B52DB281F59D997008EA4BC /* Assets.xcassets */,
 				9B52DB2A1F59D997008EA4BC /* LaunchScreen.storyboard */,
+				9B52DB471F5C4A7D008EA4BC /* Images */,
 				9B52DB2D1F59D997008EA4BC /* Info.plist */,
 			);
 			path = BidTacToe2;
+			sourceTree = "<group>";
+		};
+		9B52DB471F5C4A7D008EA4BC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9B52DB3F1F5C3E9B008EA4BC /* crosses.png */,
+				9B52DB411F5C3EB2008EA4BC /* noughts.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +144,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B52DB421F5C3EB2008EA4BC /* noughts.png in Resources */,
+				9B52DB401F5C3E9B008EA4BC /* crosses.png in Resources */,
 				9B52DB2C1F59D997008EA4BC /* LaunchScreen.storyboard in Resources */,
 				9B52DB291F59D997008EA4BC /* Assets.xcassets in Resources */,
 				9B52DB271F59D997008EA4BC /* Main.storyboard in Resources */,
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B52DB241F59D996008EA4BC /* ViewController.swift in Sources */,
+				9B52DB361F59D9C7008EA4BC /* BidViewController.swift in Sources */,
+				9B52DB341F59D9BF008EA4BC /* ChooseSymbolViewController.swift in Sources */,
+				9B52DB381F59D9D7008EA4BC /* TicTacViewController.swift in Sources */,
 				9B52DB221F59D996008EA4BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +328,7 @@
 				9B52DB321F59D997008EA4BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
