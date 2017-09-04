@@ -167,6 +167,9 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
 //                            change the winning combination images
                             
                             changeWinningImages(winningButtons: combination, winner: 1)
+//                            update the score
+                            let score = (UserDefaults.standard.object(forKey: "playerXScore") as! Int) + 1
+                            UserDefaults.standard.set(score, forKey: "playerXScore")
                             
                         } else {
                             
@@ -174,6 +177,8 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
                             
 //                            change the winning combination images
                             changeWinningImages(winningButtons: combination, winner: 2)
+                            let score = (UserDefaults.standard.object(forKey: "playerOScore") as! Int) + 1
+                            UserDefaults.standard.set(score, forKey: "playerOScore")
 
                         }
                         resetGameState()

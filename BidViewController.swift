@@ -61,16 +61,16 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         
         if scoreUpdate >= 0 {
             
-            if scoreUpdate == 1 {
-//                add score to X
-                let score = (UserDefaults.standard.object(forKey: "playerXScore") as! Int) + 1
-                UserDefaults.standard.set(score, forKey: "playerXScore")
-            } else if scoreUpdate == 2 {
-//                add score to o
-                
-                let score = (UserDefaults.standard.object(forKey: "playerOScore") as! Int) + 1
-                UserDefaults.standard.set(score, forKey: "playerOScore")
-            }
+//            if scoreUpdate == 1 {
+////                add score to X
+//                let score = (UserDefaults.standard.object(forKey: "playerXScore") as! Int) + 1
+//                UserDefaults.standard.set(score, forKey: "playerXScore")
+//            } else if scoreUpdate == 2 {
+////                add score to o
+//                
+//                let score = (UserDefaults.standard.object(forKey: "playerOScore") as! Int) + 1
+//                UserDefaults.standard.set(score, forKey: "playerOScore")
+//            }
 //            game was over reset credits
             
             resetCredits()
