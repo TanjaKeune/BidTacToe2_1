@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class TicTacViewController: UIViewController {
+class TicTacViewController: UIViewController, GADInterstitialDelegate {
 
+    var interstitial: GADInterstitial!
+    
     var playerOnMove = 0
     
     var winner = -1         //game tied 0, 1 - x won, 2 - o won, -1 game still on
@@ -30,8 +33,12 @@ class TicTacViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavBar()
-        
+        interstitial = createAndLoadInterstitial()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showInterstitial), name:NSNotification.Name(rawValue: "showInterAd"), object: nil)
     }
+
+    
+//    TODO: Interstitial ad is adding +1 on the core variable
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -45,7 +52,6 @@ class TicTacViewController: UIViewController {
         hideWinningLabelAndButton()
         
         print(gameState)
-        
     }
 
     func showWinningLabelAndButton() {
@@ -263,9 +269,6 @@ class TicTacViewController: UIViewController {
             
             destination.scoreUpdate = winner
             
-//            if we have a winner or the game is still on for next bid, and should we add to the score
-            
-//            destination.gotWinner = winner
         }
     }
     
@@ -284,6 +287,33 @@ class TicTacViewController: UIViewController {
     @IBAction func playAgainButton(_ sender: Any) {
         
         self.perform(#selector(callSegue), with: nil, afterDelay: 2.0)
+        self.perform(#selector(showAd), with: nil, afterDelay: 2.5)
     }
     
+    func createAndLoadInterstitial() -> GADInterstitial {
+        print("making ad")
+        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2556933997218061/3991155796")
+        interstitial.delegate = self as GADInterstitialDelegate
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        interstitial.load(request)
+        return interstitial
+    }
+    
+    func showInterstitial(){
+        if (interstitial!.isReady) {
+            self.interstitial.present(fromRootViewController: self)
+        }else{
+            print("ad not ready?")
+        }
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitial = createAndLoadInterstitial()
+    }
+    
+    func showAd() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showInterAd"), object: nil)
+        performSegue(withIdentifier: "goBid", sender: nil)
+    }
 }

@@ -9,10 +9,7 @@
 import UIKit
 
 
-
 class BidViewController: UIViewController, UITextFieldDelegate {
-
-
 
     @IBOutlet weak var player1Image: UIImageView!
     @IBOutlet weak var player2Image: UIImageView!
@@ -36,6 +33,8 @@ class BidViewController: UIViewController, UITextFieldDelegate {
     
     var scoreUpdate = -1
     
+    var presentAd = false
+    
     var activeBidder: Int = Int()
     
     override func viewDidLoad() {
@@ -53,11 +52,8 @@ class BidViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        
         textFieldBid.delegate = self
         getPlayers()
-        setupScore()
-
         activeBidder = player1
         print("ActiveBidder = \(activeBidder) Player1 = \(player1)")
         print("activeBidder - from viewWillAppear = \(activeBidder)")
@@ -67,24 +63,24 @@ class BidViewController: UIViewController, UITextFieldDelegate {
             
             if scoreUpdate == 1 {
 //                add score to X
-                var score = UserDefaults.standard.object(forKey: "playerXScore") as! Int
-                score += 1
+                let score = (UserDefaults.standard.object(forKey: "playerXScore") as! Int) + 1
                 UserDefaults.standard.set(score, forKey: "playerXScore")
             } else if scoreUpdate == 2 {
 //                add score to o
                 
-                var score = UserDefaults.standard.object(forKey: "playerOScore") as! Int
-                score += 1
+                let score = (UserDefaults.standard.object(forKey: "playerOScore") as! Int) + 1
                 UserDefaults.standard.set(score, forKey: "playerOScore")
             }
 //            game was over reset credits
             
             resetCredits()
-        setupScore()
+            setupScore()
+
         }
-        
+
         
     }
+    
     func getPlayers() {
         
         player1 = UserDefaults.standard.object(forKey: "player1") as! Int
@@ -183,22 +179,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         navigationItem.titleView = logo
         
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "makeMove" {
-//            
-//            let destination = segue.destination as! TicTacViewController
-//            
-//            destination.playerOnMove = biggerBid
-//            destination.winner = gotWinner
-//        }
-//    }
-//
-//    
-    
-    
-    
+  
     @IBAction func bidButton(_ sender: Any) {
         
         
@@ -208,14 +189,14 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         
         if textFieldBid.text != "" {
             
-            //              convert into Int
+//              convert into Int
             
             let bid = Int(textFieldBid.text!)!
             
             switch activeBidder {
             case 1:
-                //                check for credits
-                //                adBidsCounter
+//                check for credits
+//                adBidsCounter
                 if bid <= playerXCredits {
                     
                     bidX = bid
@@ -312,4 +293,5 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
 }
