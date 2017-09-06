@@ -3,49 +3,49 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "BidIcon20x2.png",
+      "filename" : "BidTacIcon20x2.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "BidIcon20x3.png",
+      "filename" : "BidTacIcon3x20.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "BidIcon58.png",
+      "filename" : "BidTacIcon29x2.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "BidIcon87.png",
+      "filename" : "BidTacIcon29x3.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "BidIcon80.png",
+      "filename" : "BidTacIcon40x2.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "BidIcon120.png",
+      "filename" : "BidTacIcon40x3.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "BidIcon120-1.png",
+      "filename" : "BidTacIcon60x2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "BidIcon180.png",
+      "filename" : "BidTacIcon3x60.png",
       "scale" : "3x"
     },
     {
