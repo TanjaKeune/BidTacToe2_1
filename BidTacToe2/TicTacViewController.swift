@@ -98,9 +98,9 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         
         if playerOnMove == 1 {
             
-            self.whosTurnLabel.text = " X Make Your Move "
+            self.whosTurnLabel.text = " Xs Make Your Move "
         } else {
-            self.whosTurnLabel.text = " O Make Your Move "
+            self.whosTurnLabel.text = " Os Make Your Move "
         }
 
     }

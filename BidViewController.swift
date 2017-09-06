@@ -38,6 +38,10 @@ class BidViewController: UIViewController, UITextFieldDelegate {
     
     var activeBidder: Int = Int()
     
+//    who won the bid and should make a turn
+    
+    @IBOutlet weak var whosTurnItIs: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,24 +68,12 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         setupImagesAndCredits()
         
         if scoreUpdate >= 0 {
-            
-//            if scoreUpdate == 1 {
-////                add score to X
-//                let score = (UserDefaults.standard.object(forKey: "playerXScore") as! Int) + 1
-//                UserDefaults.standard.set(score, forKey: "playerXScore")
-//            } else if scoreUpdate == 2 {
-////                add score to o
-//                
-//                let score = (UserDefaults.standard.object(forKey: "playerOScore") as! Int) + 1
-//                UserDefaults.standard.set(score, forKey: "playerOScore")
-//            }
-//            game was over reset credits
-            
             resetCredits()
             setupScore()
 
         }
-
+        
+        whosTurnItIs.center = CGPoint(x: whosTurnItIs.center.x + 500, y: whosTurnItIs.center.y)
         
     }
     
@@ -95,12 +87,12 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         
         switch player1 {
         case 1:
-            labelWhosTurn.text = " X make your bid: "
+            labelWhosTurn.text = " Xs make your bid: "
             UserDefaults.standard.set(100, forKey: "playerXCredits")
             UserDefaults.standard.set(100, forKey: "playerOCredits")
     
         case 2:
-            labelWhosTurn.text = " O make your bid: "
+            labelWhosTurn.text = " Os make your bid: "
             UserDefaults.standard.set(100, forKey: "playerXCredits")
             UserDefaults.standard.set(100, forKey: "playerOCredits")
             
@@ -133,11 +125,19 @@ class BidViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+    func presentLabel(text: String) {
+        
+        self.whosTurnItIs.text = text
+        UIView.animate(withDuration: 0.5) {
+            self.whosTurnItIs.center = CGPoint(x: self.whosTurnItIs.center.x - 500, y: self.whosTurnItIs.center.y)
+        }
+    }
+    
     func setupImagesAndCredits() {
         
         if player1 == 1 {
             
-            labelWhosTurn.text = " X make your bid: "
+            labelWhosTurn.text = " Xs make your bid: "
             player1Image.image = UIImage(named: "crosses.png")
             player2Image.image = UIImage(named: "Noughts.png")
             
@@ -146,7 +146,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
 
         } else {
             
-            labelWhosTurn.text = " O make your bid: "
+            labelWhosTurn.text = " Os make your bid: "
             player2Image.image = UIImage(named: "crosses.png")
             player1Image.image = UIImage(named: "Noughts.png")
             
@@ -206,7 +206,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                     bidX = bid
                     activeBidder = 2
                     textFieldBid.text = ""
-                    labelWhosTurn.text = " 0 make your bid: "
+                    labelWhosTurn.text = " Os make your bid: "
                     
                 } else {
                     //                    not enough credits
@@ -219,7 +219,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                     bidO = bid
                     activeBidder = 1
                     textFieldBid.text = ""
-                    labelWhosTurn.text = " X make your bid: "
+                    labelWhosTurn.text = " Xs make your bid: "
 
                     
                 } else {
@@ -248,7 +248,8 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                 playerOnMove = 1
                 UserDefaults.standard.set(playerXCredits - bidX, forKey: "playerXCredits")
                 UserDefaults.standard.set(playerOCredits + bidX, forKey: "playerOCredits")
-                performSegue(withIdentifier: "makeMove", sender: nil)
+                presentLabel(text: "Xs on move!")
+                perform(#selector(callSegue), with: nil, afterDelay: 0.8)
                 
             } else if bidX < bidO {
                 
@@ -256,7 +257,8 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                 playerOnMove = 2
                 UserDefaults.standard.set(playerXCredits + bidO, forKey: "playerXCredits")
                 UserDefaults.standard.set(playerOCredits - bidO, forKey: "playerOCredits")
-                performSegue(withIdentifier: "makeMove", sender: nil)
+                presentLabel(text: "Os on move!")
+                perform(#selector(callSegue), with: nil, afterDelay: 0.8)
             } else {
                 
 //                tie
@@ -268,6 +270,11 @@ class BidViewController: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+    
+    func callSegue() {
+        
+        performSegue(withIdentifier: "makeMove", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -298,4 +305,11 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        
+        resetScore()
+        setupScore()
+        resetCredits()
+        setupImagesAndCredits()
+    }
 }
