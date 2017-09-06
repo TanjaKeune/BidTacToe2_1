@@ -31,6 +31,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
 
         setupNavBar()
         interstitial = createAndLoadInterstitial()

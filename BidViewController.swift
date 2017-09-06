@@ -45,7 +45,8 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         setupScore()
         print("player1 - view did load = \(player1)")
         print("player2 - view did load = \(player2)")
-        
+        self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
+
     }
 
     

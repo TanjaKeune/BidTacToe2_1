@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GADMobileAds.configure(withApplicationID: "ca-app-pub-2556933997218061~2705994288")
 
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
+        
+        
+        
         return true
     }
 

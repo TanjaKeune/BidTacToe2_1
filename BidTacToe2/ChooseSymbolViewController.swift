@@ -17,7 +17,8 @@ class ChooseSymbolViewController: UIViewController {
 //        UserDefaults.standard.set(0, forKey: "player1")
 //        UserDefaults.standard.set(0, forKey: "player2")
         setNavigationBarTitle()
-        
+        self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
