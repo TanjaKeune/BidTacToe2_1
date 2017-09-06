@@ -19,7 +19,6 @@
 		9B52DB421F5C3EB2008EA4BC /* noughts.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB411F5C3EB2008EA4BC /* noughts.png */; };
 		9B52DB4A1F5C7687008EA4BC /* noughtsWon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB481F5C7687008EA4BC /* noughtsWon.png */; };
 		9B52DB4B1F5C7687008EA4BC /* crossesWon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB491F5C7687008EA4BC /* crossesWon.png */; };
-		9B52DB6B1F5C97F5008EA4BC /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52DB6A1F5C97F5008EA4BC /* ViewController1.swift */; };
 		9B52DB6F1F5C9F91008EA4BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B52DB6E1F5C9F91008EA4BC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		9B52DB411F5C3EB2008EA4BC /* noughts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noughts.png; path = Assets.xcassets/o.imageset/noughts.png; sourceTree = "<group>"; };
 		9B52DB481F5C7687008EA4BC /* noughtsWon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noughtsWon.png; sourceTree = "<group>"; };
 		9B52DB491F5C7687008EA4BC /* crossesWon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossesWon.png; sourceTree = "<group>"; };
-		9B52DB6A1F5C97F5008EA4BC /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		9B52DB6E1F5C9F91008EA4BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B980625556417383D91B5535 /* Pods-BidTacToe2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidTacToe2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BidTacToe2/Pods-BidTacToe2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +86,6 @@
 				9B52DB211F59D996008EA4BC /* AppDelegate.swift */,
 				9B52DB351F59D9C7008EA4BC /* BidViewController.swift */,
 				9B52DB371F59D9D7008EA4BC /* TicTacViewController.swift */,
-				9B52DB6A1F5C97F5008EA4BC /* ViewController1.swift */,
 				9B52DB331F59D9BF008EA4BC /* ChooseSymbolViewController.swift */,
 				9B52DB251F59D997008EA4BC /* Main.storyboard */,
 				9B52DB281F59D997008EA4BC /* Assets.xcassets */,
@@ -250,7 +247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B52DB361F59D9C7008EA4BC /* BidViewController.swift in Sources */,
-				9B52DB6B1F5C97F5008EA4BC /* ViewController1.swift in Sources */,
 				9B52DB341F59D9BF008EA4BC /* ChooseSymbolViewController.swift in Sources */,
 				9B52DB381F59D9D7008EA4BC /* TicTacViewController.swift in Sources */,
 				9B52DB221F59D996008EA4BC /* AppDelegate.swift in Sources */,

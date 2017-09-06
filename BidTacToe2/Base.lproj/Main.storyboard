@@ -31,7 +31,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCT-in-oSS">
                                 <rect key="frame" x="66" y="283" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="x"/>
+                                <state key="normal" title="Button" image="XButton"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYw-Bw-5XV"/>
                                 </connections>
@@ -39,7 +39,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ0-es-HDp">
                                 <rect key="frame" x="209" y="283" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="o"/>
+                                <state key="normal" title="Button" image="OButton"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhI-7w-Krn"/>
                                 </connections>
@@ -49,6 +49,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="dRQ-Iu-DSt"/>
                     <connections>
+                        <outlet property="oButton" destination="jQ0-es-HDp" id="qw4-E7-xqv"/>
+                        <outlet property="xButton" destination="TCT-in-oSS" id="ghL-bU-UgV"/>
                         <segue destination="dOy-1Y-NAY" kind="show" identifier="gotSymbol" id="fis-PQ-cee"/>
                     </connections>
                 </viewController>
@@ -68,20 +70,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY4-sP-fUf">
-                                <rect key="frame" x="147" y="379.5" width="80.5" height="19.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY4-sP-fUf">
+                                <rect key="frame" x="99" y="339" width="176" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="Bid"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                </variation>
+                                <state key="normal" image="Button"/>
+                                <variation key="heightClass=regular-widthClass=compact"/>
                                 <connections>
                                     <action selector="bidButton:" destination="dOy-1Y-NAY" eventType="touchUpInside" id="PIO-nl-dLv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="4lF-az-8XK">
-                                <rect key="frame" x="123.5" y="330.5" width="127.5" height="30"/>
+                                <rect key="frame" x="99" y="301" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -144,6 +144,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZP-0Q-PAb">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nPG-XV-FZL"/>
+                                    <barButtonItem title="Reset" id="oLa-II-yCn"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -155,13 +163,14 @@
                         <outlet property="player2Image" destination="35V-IJ-J1f" id="04e-Bt-OYZ"/>
                         <outlet property="scoreLabel" destination="EfA-Zt-g5w" id="Aju-ji-ewE"/>
                         <outlet property="textFieldBid" destination="4lF-az-8XK" id="KIm-5i-cg6"/>
+                        <outlet property="toolBar" destination="nZP-0Q-PAb" id="VbP-Au-seT"/>
                         <segue destination="eyB-yI-PKl" kind="show" identifier="makeMove" id="Er2-Kw-gKf"/>
                         <segue destination="S98-Ha-bi9" kind="show" identifier="changeSymbol" id="Lld-9g-Eo2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cF8-8b-2ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880" y="149"/>
+            <point key="canvasLocation" x="1879.2" y="148.87556221889056"/>
         </scene>
         <!--Tic Tac View Controller-->
         <scene sceneID="Fwp-nw-XHr">
@@ -304,10 +313,12 @@
     </scenes>
     <resources>
         <image name="Board" width="5147" height="5147"/>
-        <image name="o" width="362" height="362"/>
+        <image name="Button" width="317" height="110"/>
+        <image name="OButton" width="102" height="102"/>
+        <image name="XButton" width="102" height="102"/>
         <image name="x" width="362" height="362"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9qG-5b-Tnz"/>
+        <segue reference="fis-PQ-cee"/>
     </inferredMetricsTieBreakers>
 </document>

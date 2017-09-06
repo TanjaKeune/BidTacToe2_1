@@ -10,6 +10,10 @@ import UIKit
 
 class ChooseSymbolViewController: UIViewController {
 
+    @IBOutlet weak var xButton: UIButton!
+    @IBOutlet weak var oButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

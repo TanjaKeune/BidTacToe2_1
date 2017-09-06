@@ -22,6 +22,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textFieldBid: UITextField!
     
     @IBOutlet weak var labelWhosTurn: UILabel!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     var playerOnMove = 0
     
@@ -46,7 +47,9 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         print("player1 - view did load = \(player1)")
         print("player2 - view did load = \(player2)")
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
-
+//        toolBar.backgroundColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
+        toolBar.tintColor = UIColor.white
+        toolBar.barTintColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
     }
 
     
