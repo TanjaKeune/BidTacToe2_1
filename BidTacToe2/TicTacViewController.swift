@@ -33,7 +33,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
 
-        setupNavBar()
+        setNavigationBarTitle()
         interstitial = createAndLoadInterstitial()
         NotificationCenter.default.addObserver(self, selector: #selector(self.showInterstitial), name:NSNotification.Name(rawValue: "showInterAd"), object: nil)
     }
@@ -104,18 +104,26 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         }
 
     }
-
-    func setupNavBar() {
+    func setNavigationBarTitle() {
         
-        self.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
         
-        let logo = UIImageView(image: #imageLiteral(resourceName: "Logo"))
-        logo.frame = CGRect(x: 0, y: 0, width: 60, height: 25)
+        let image = #imageLiteral(resourceName: "Logo")
+        let logo = UIImageView(image: image)
+        
+        let bannerWidth = navigationController!.navigationBar.frame.size.width
+        let bannerHeight = navigationController!.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth / 2 - image.size.width / 2
+        let bannerY = bannerHeight / 2 - image.size.height / 2
+        
+        logo.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight - 5)
         logo.contentMode = .scaleAspectFit
         
-        navigationItem.titleView = logo
+        self.navigationItem.titleView = logo
         
     }
+
     
     @IBAction func buttonPressed(_ sender: UIButton) {
                 

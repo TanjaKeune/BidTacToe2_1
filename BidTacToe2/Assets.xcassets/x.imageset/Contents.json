@@ -12,6 +12,21 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "x100x100.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "x200x200.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "x300x300.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
