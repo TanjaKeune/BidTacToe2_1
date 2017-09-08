@@ -81,7 +81,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <state key="normal" image="Button"/>
-                                <variation key="heightClass=regular-widthClass=compact"/>
                                 <connections>
                                     <action selector="bidButton:" destination="dOy-1Y-NAY" eventType="touchUpInside" id="PIO-nl-dLv"/>
                                 </connections>
@@ -358,7 +357,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="htx-CV-8qU">
                                 <rect key="frame" x="118" y="378" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.26376047730445862" green="0.35472357273101807" blue="0.57657110691070557" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.3529411764705882" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Play Again">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Play Again">
@@ -411,7 +410,7 @@
         <image name="Button" width="317" height="110"/>
         <image name="OButton" width="102" height="102"/>
         <image name="XButton" width="102" height="102"/>
-        <image name="x" width="362" height="362"/>
+        <image name="x" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9qG-5b-Tnz"/>

@@ -211,7 +211,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
                 
                 winner = 0
 //                we have a tie
-                winnerLabel.text = "This game is a tie!"
+                winnerLabel.text = "It's a tie!"
                 resetGameState()
                 showWinningLabelAndButton()
                 
