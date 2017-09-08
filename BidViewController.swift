@@ -48,10 +48,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         getPlayers()
         setNavigationBarTitle()
         setupScore()
-        print("player1 - view did load = \(player1)")
-        print("player2 - view did load = \(player2)")
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
-//        toolBar.backgroundColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
         toolBar.tintColor = UIColor.white
         toolBar.barTintColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
     }
@@ -63,8 +60,6 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         textFieldBid.delegate = self
         getPlayers()
         activeBidder = player1
-        print("ActiveBidder = \(activeBidder) Player1 = \(player1)")
-        print("activeBidder - from viewWillAppear = \(activeBidder)")
         setupImagesAndCredits()
         
         if scoreUpdate >= 0 {
@@ -118,12 +113,6 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     func presentLabel(text: String) {
         
@@ -200,15 +189,10 @@ class BidViewController: UIViewController, UITextFieldDelegate {
 
         
         if textFieldBid.text != "" {
-            
-//              convert into Int
-            
             let bid = Int(textFieldBid.text!)!
             
             switch activeBidder {
             case 1:
-//                check for credits
-//                adBidsCounter
                 if bid <= playerXCredits {
                     
                     bidX = bid
@@ -242,7 +226,6 @@ class BidViewController: UIViewController, UITextFieldDelegate {
                 
                 
             }
-            print("BID BUTTON: bid = \(bid) bidX = \(bidX) bidO = \(bidO)")
 
         }
         

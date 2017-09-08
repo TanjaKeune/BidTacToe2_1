@@ -38,9 +38,6 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.showInterstitial), name:NSNotification.Name(rawValue: "showInterAd"), object: nil)
     }
 
-    
-//    TODO: Interstitial ad is adding +1 on the core variable
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -51,8 +48,6 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         complitedTurn = false
         
         hideWinningLabelAndButton()
-        
-        print(gameState)
     }
 
     func showWinningLabelAndButton() {
@@ -235,7 +230,6 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         
         
         var buttonWin: UIButton = UIButton()
-        print(winningButtons)
         for i in winningButtons {
             
             let tag = i + 1
@@ -304,9 +298,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         self.perform(#selector(showAd), with: nil, afterDelay: 2.5)
     }
     
-    func createAndLoadInterstitial() -> GADInterstitial {
-        print("making ad")
-        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2556933997218061/3991155796")
+    func createAndLoadInterstitial() -> GADInterstitial {        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2556933997218061/3991155796")
         interstitial.delegate = self as GADInterstitialDelegate
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]
@@ -317,8 +309,6 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
     func showInterstitial(){
         if (interstitial!.isReady) {
             self.interstitial.present(fromRootViewController: self)
-        }else{
-            print("ad not ready?")
         }
     }
     
