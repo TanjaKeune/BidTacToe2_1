@@ -128,7 +128,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
             
             labelWhosTurn.text = " Xs make your bid: "
             player1Image.image = UIImage(named: "crosses.png")
-            player2Image.image = UIImage(named: "Noughts.png")
+            player2Image.image = UIImage(named: "noughts.png")
             
             player1CreditsLabel.text = String(describing: UserDefaults.standard.object(forKey: "playerXCredits")!)
             player2CreditsLabel.text = String(describing: UserDefaults.standard.object(forKey: "playerOCredits")!)
@@ -137,7 +137,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
             
             labelWhosTurn.text = " Os make your bid: "
             player2Image.image = UIImage(named: "crosses.png")
-            player1Image.image = UIImage(named: "Noughts.png")
+            player1Image.image = UIImage(named: "noughts.png")
             
             player1CreditsLabel.text = String(describing: UserDefaults.standard.object(forKey: "playerOCredits")!)
             player2CreditsLabel.text = String(describing: UserDefaults.standard.object(forKey: "playerXCredits")!)

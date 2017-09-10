@@ -149,7 +149,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
             } else {
                 
                 //            present alert to choose diffrent position
-                
+                complitedTurn = false
                 alertMessage(title: "Position taken", message: "Choose empty field")
             }
             
@@ -301,7 +301,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
     func createAndLoadInterstitial() -> GADInterstitial {        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2556933997218061/3991155796")
         interstitial.delegate = self as GADInterstitialDelegate
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+//        request.testDevices = [kGADSimulatorID]
         interstitial.load(request)
         return interstitial
     }
