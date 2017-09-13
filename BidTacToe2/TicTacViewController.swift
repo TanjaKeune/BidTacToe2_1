@@ -36,6 +36,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
         setNavigationBarTitle()
         interstitial = createAndLoadInterstitial()
         NotificationCenter.default.addObserver(self, selector: #selector(self.showInterstitial), name:NSNotification.Name(rawValue: "showInterAd"), object: nil)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -301,7 +302,7 @@ class TicTacViewController: UIViewController, GADInterstitialDelegate {
     func createAndLoadInterstitial() -> GADInterstitial {        let interstitial = GADInterstitial(adUnitID: "ca-app-pub-2556933997218061/3991155796")
         interstitial.delegate = self as GADInterstitialDelegate
         let request = GADRequest()
-//        request.testDevices = [kGADSimulatorID]
+        request.testDevices = [kGADSimulatorID]
         interstitial.load(request)
         return interstitial
     }

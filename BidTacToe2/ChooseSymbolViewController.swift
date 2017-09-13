@@ -19,6 +19,7 @@ class ChooseSymbolViewController: UIViewController {
         
         setNavigationBarTitle()
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
 
     }
 

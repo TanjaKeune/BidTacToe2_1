@@ -51,6 +51,7 @@ class BidViewController: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 240/255, alpha: 1)
         toolBar.tintColor = UIColor.white
         toolBar.barTintColor = UIColor(red: 61/255, green: 91/255, blue: 151/255, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
     }
 
     
